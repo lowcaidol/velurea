@@ -1,0 +1,64 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0d0d0d;
+  color: #fff;
+}
+header {
+  background-color: #1a1a1a;
+  padding: 60px 20px;
+  text-align: center;
+}
+header h1 {
+  font-size: 48px;
+  color: #ff4fbf;
+}
+header p {
+  font-size: 18px;
+  color: #ccc;
+}
+.cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #ff4fbf;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+section {
+  padding: 40px 20px;
+}
+h2 {
+  color: #ff4fbf;
+  text-transform: uppercase;
+}
+.pakiet {
+  border: 1px solid #ff4fbf;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+}
+.kontakt-links li {
+  margin: 10px 0;
+}
+#ai-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #1a1a1a;
+  padding: 20px;
+  border: 1px solid #ff4fbf;
+  border-radius: 10px;
+  width: 250px;
+}
+#ai-chat input {
+  width: 100%;
+  margin-top: 10px;
+  padding: 6px;
+  border: none;
+  border-radius: 4px;
+}
