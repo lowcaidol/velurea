@@ -5,21 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VELUREA – Agencja Premium</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
+
   <header class="hero">
     <div class="top-bar">
       <img src="V (1).png" alt="Velurea Logo" class="logo" />
     </div>
-    <div class="hero-text">
+    <div class="hero-text fade-in">
       <h1>VELUREA</h1>
       <p>Agencja kreatywna dla kobiet, które chcą zarabiać na OnlyFans – bez kompromisów i bez ograniczeń.</p>
       <a href="pakiety.html" class="cta">📦 Zobacz pakiety</a>
       <a href="faq.html" class="cta secondary">❓ FAQ</a>
+      <button class="info-btn" onclick="toggleAbout()">ℹ️ Kim jesteśmy?</button>
     </div>
   </header>
 
-  <section class="kontakt">
+  <section class="kontakt fade-in">
     <h2>Kontakt</h2>
     <p><strong>kontakt@velurea.pl</strong> <button onclick="copyEmail()">📋 Skopiuj</button></p>
     <ul>
@@ -29,15 +32,22 @@
     </ul>
   </section>
 
-  <div id="ai-chat" class="hidden">
-    <h3>🤖 VELUREA AI</h3>
-    <div class="chat-box" id="chatBox">
-      <div class="msg ai">Hej! W czym mogę pomóc?</div>
+  <div class="about-panel" id="aboutPanel">
+    <div class="about-content">
+      <h2>O VELUREA</h2>
+      <p>
+        VELUREA to nie tylko agencja. To system. Styl życia.  
+        Pracujemy z kobietami, które chcą zarabiać profesjonalnie, z klasą i ambicją.  
+        Dla nas liczy się strategia, estetyka, sprzedaż i rozwój. Twój rozwój.
+      </p>
+      <p>
+        Zajmujemy się wszystkim – od planu, przez content, aż po komunikację i promocję.  
+        Ty możesz tworzyć, możesz zarządzać, możesz robić tylko to, co chcesz – a resztę zostawiasz nam.  
+        Jeśli szukasz prawdziwego zespołu – jesteś we właściwym miejscu.
+      </p>
+      <button onclick="toggleAbout()" class="cta">✖ Zamknij</button>
     </div>
-    <input type="text" id="userInput" placeholder="Zadaj pytanie..." />
-    <button onclick="sendMessage()">Wyślij</button>
   </div>
-  <button id="toggleChat" onclick="toggleChat()">💬 Porozmawiaj z VELUREĄ</button>
 
   <footer>
     <p>© 2025 VELUREA. All rights reserved.</p>
@@ -46,5 +56,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
