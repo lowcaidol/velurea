@@ -9,7 +9,7 @@
     :root {
       --bg-color: #0e0e14;
       --card-bg: #1b1b29;
-      --accent: #d4af37; /* złoty */
+      --accent: #d4af37;
       --text: #ffffff;
       --light-text: #cccccc;
     }
@@ -220,10 +220,85 @@
 </head>
 <body>
 
-  <!-- Treść strony jak w poprzednim kodzie, niezmieniona -->
+  <header>
+    <div class="logo">VELUREA</div>
+    <nav>
+      <ul>
+        <li><a href="#onas">O Nas</a></li>
+        <li><a href="#uslugi">Usługi</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>VELUREA</h1>
+    <p>Twój zespół do sukcesu na OnlyFans</p>
+    <a href="#uslugi" class="cta-btn">Zacznij z nami</a>
+  </section>
+
+  <section id="onas">
+    <h2>O Nas</h2>
+    <div class="grid grid-2">
+      <div class="card"><h3>Kim jesteśmy?</h3><p>Agencja wspierająca kobiety w zarabianiu na OnlyFans, od A do Z.</p></div>
+      <div class="card"><h3>Nasze podejście</h3><p>"Your body, our business" – Ty tworzysz treści, my robimy resztę.</p></div>
+      <div class="card"><h3>Bezpieczeństwo</h3><p>Twoja anonimowość i prywatność są naszym priorytetem.</p></div>
+      <div class="card"><h3>Pełna obsługa</h3><p>Zarządzanie, content, kampanie – kompleksowo.</p></div>
+    </div>
+  </section>
+
+  <section id="uslugi">
+    <h2>Nasze Usługi</h2>
+    <div class="grid grid-2">
+      <div class="card"><h3>Zarządzanie kontem</h3><p>24/7 support, wiadomości, PPV, tipy.</p></div>
+      <div class="card"><h3>Produkcja treści</h3><p>Stylizacje, zdjęcia, wideo, retusz.</p></div>
+      <div class="card"><h3>Marketing</h3><p>Promocja na IG, TikTok, Twitter.</p></div>
+      <div class="card"><h3>Reklamy</h3><p>Targetowane kampanie reklamowe.</p></div>
+      <div class="card"><h3>Analiza</h3><p>Statystyki, raporty i optymalizacja konta.</p></div>
+      <div class="card"><h3>Kalendarz publikacji</h3><p>Planowanie i organizacja postów.</p></div>
+      <div class="card"><h3>Edukacja</h3><p>Szkolenia z OnlyFans & zarządzania marką.</p></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>Najczęściej Zadawane Pytania</h2>
+    <div class="faq-item"><div class="question">Jak dołączyć?</div><div class="answer">Wypełnij formularz lub napisz do nas na Instagramie.</div></div>
+    <div class="faq-item"><div class="question">Czy muszę mieć konto?</div><div class="answer">Nie – pomożemy Ci od zera wystartować.</div></div>
+    <div class="faq-item"><div class="question">Ile to kosztuje?</div><div class="answer">Mamy pakiety dopasowane do Ciebie – ustalane indywidualnie.</div></div>
+    <div class="faq-item"><div class="question">Mam wpływ na swój profil?</div><div class="answer">Oczywiście – to Twoje konto, a my tylko pomagamy.</div></div>
+    <div class="faq-item"><div class="question">Czy współpracujecie dyskretnie?</div><div class="answer">Tak, działamy z pełnym zachowaniem prywatności.</div></div>
+    <div class="faq-item"><div class="question">Jak szybko zobaczę efekty?</div><div class="answer">Zazwyczaj w ciągu kilku tygodni od startu!</div></div>
+  </section>
+
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <div class="contact-grid">
+      <div class="contact-form">
+        <form action="mailto:kontakt@velurea.pl" method="POST" enctype="text/plain">
+          <input type="text" name="name" placeholder="Imię" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="text" name="instagram" placeholder="Instagram" />
+          <textarea name="message" placeholder="Wiadomość" required></textarea>
+          <button type="submit">Wyślij</button>
+        </form>
+      </div>
+      <div class="contact-socials">
+        <h3>Social Media</h3>
+        <div class="social-links">
+          <a href="https://www.instagram.com/workwithvelurea/" target="_blank">Instagram</a>
+          <a href="https://www.tiktok.com/@workwithvelurea" target="_blank">TikTok</a>
+          <a href="https://x.com/WorkWithVelurea" target="_blank">X (Twitter)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 VELUREA – Wszystkie prawa zastrzeżone | Godziny otwarcia: 24/7</p>
+  </footer>
 
   <script>
-    // Intersection Observer dla animacji kafelków
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -238,7 +313,6 @@
       observer.observe(card);
     });
 
-    // FAQ toggle
     document.querySelectorAll('.faq-item').forEach(item => {
       item.addEventListener('click', () => {
         item.classList.toggle('active');
