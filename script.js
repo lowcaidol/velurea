@@ -1,18 +1,17 @@
 // Funkcja, która będzie sprawdzać, kiedy element jest widoczny
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
-    // Jeśli element jest widoczny w oknie
     if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);  // Przestajemy obserwować, bo animacja już została wykonana
+      entry.target.classList.add("visible");  // Dodaje klasę visible
+      observer.unobserve(entry.target);  // Przestaje obserwować ten element po animacji
     }
   });
 }, {
-  threshold: 0.5  // Element będzie uznany za "widoczny", gdy 50% elementu będzie w oknie
+  threshold: 0.5  // Element będzie uznawany za "widoczny", gdy 50% elementu pojawi się na ekranie
 });
 
-// Obserwowanie wszystkich pakietów i FAQ
-const cards = document.querySelectorAll('.pricing-card, .faq-card'); 
+// Obserwowanie wszystkich kart pakietów
+const cards = document.querySelectorAll('.pricing-card'); 
 cards.forEach(card => {
-  observer.observe(card);
+  observer.observe(card);  // Rozpoczyna obserwację
 });
