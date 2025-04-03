@@ -1,12 +1,10 @@
-/* Fonts + Reset */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #0e0e0e;
-  color: #f2f2f2;
+  color: #f5f5f5;
   line-height: 1.8;
 }
-
 a {
   color: #bfa382;
   text-decoration: none;
@@ -15,30 +13,21 @@ a {
 a:hover {
   color: #d8c3a5;
 }
-
 .logo {
-  height: 50px;
-  margin: 25px;
+  height: 55px;
+  margin: 25px 0;
 }
-
 .top-bar {
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
+  padding: 0 30px;
 }
-
 .hero {
   text-align: center;
   padding: 100px 30px 80px;
   background: linear-gradient(to bottom, #151515, #0e0e0e);
 }
-.hero.small {
-  padding: 60px 30px;
-}
 .hero h1 {
   font-family: 'DM Serif Display', serif;
   font-size: 4rem;
-  margin-bottom: 10px;
   color: #d8c3a5;
 }
 .hero p {
@@ -47,27 +36,26 @@ a:hover {
   max-width: 700px;
   margin: 0 auto;
 }
-
-.cta {
+.cta, .info-btn {
   background: #bfa382;
   color: #0e0e0e;
-  padding: 14px 32px;
+  padding: 14px 30px;
   border-radius: 30px;
-  margin: 20px 10px 0;
+  margin: 15px 10px 0;
   display: inline-block;
   font-weight: bold;
+  border: none;
+  cursor: pointer;
 }
 .cta.secondary {
   background: transparent;
   border: 2px solid #bfa382;
   color: #bfa382;
 }
-.cta:hover {
+.cta:hover, .info-btn:hover {
   background: #d8c3a5;
   color: #111;
 }
-
-/* Sekcje */
 section {
   padding: 80px 30px;
   max-width: 1100px;
@@ -80,51 +68,6 @@ h2 {
   margin-bottom: 40px;
   text-align: center;
 }
-
-/* Pakiety */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-}
-.card {
-  background: #191919;
-  padding: 30px;
-  border-radius: 16px;
-  border-left: 6px solid #bfa382;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  transition: 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(255,255,255,0.06);
-}
-.card h2, .card h3 {
-  color: #e6d3b3;
-}
-.card ul {
-  padding-left: 20px;
-}
-.desc {
-  margin-top: 15px;
-  font-style: italic;
-  color: #c2b59b;
-}
-
-/* FAQ */
-.faq-item {
-  margin-bottom: 40px;
-  padding: 30px;
-  background: #181818;
-  border-left: 4px solid #bfa382;
-  border-radius: 10px;
-}
-.faq-item h2 {
-  font-size: 1.5rem;
-  margin-bottom: 12px;
-}
-
-/* Kontakt */
 .kontakt {
   text-align: center;
 }
@@ -138,33 +81,63 @@ h2 {
 .kontakt button {
   background: #bfa382;
   border: none;
-  color: #0e0e0e;
   padding: 10px 20px;
-  border-radius: 25px;
-  margin-left: 10px;
+  color: #0e0e0e;
+  border-radius: 30px;
   cursor: pointer;
 }
 .kontakt button:hover {
   background: #d8c3a5;
 }
-
-/* Footer */
+.about-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 450px;
+  height: 100%;
+  background: #111;
+  box-shadow: -6px 0 30px rgba(0,0,0,0.6);
+  padding: 40px 30px;
+  z-index: 9999;
+  transform: translateX(100%);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  overflow-y: auto;
+}
+.about-panel.open {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.about-panel h2 {
+  font-family: 'DM Serif Display', serif;
+  color: #d8c3a5;
+  margin-bottom: 20px;
+}
+.about-panel p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+.about-panel .cta {
+  margin-top: 30px;
+  background: #bfa382;
+  color: #0e0e0e;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
 footer {
-  padding: 40px 20px;
   text-align: center;
+  padding: 40px 20px;
   font-size: 0.9rem;
   color: #888;
 }
-
-/* Animacje */
 .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.7s ease forwards;
+  animation: fadeIn 1s ease-in-out;
 }
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
