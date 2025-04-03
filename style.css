@@ -1,161 +1,171 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #1b1b1b;
-  color: #f0f0f0;
+  background-color: #111;
+  color: #f5f5f5;
+  line-height: 1.7;
 }
+
+a {
+  color: #d4af7f;
+  text-decoration: none;
+}
+
 .logo {
-  width: 60px;
-  margin-bottom: 10px;
+  height: 50px;
+  margin: 20px;
 }
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(to right, #2e2b30, #4a232d);
-  color: #f0e9e0;
+  background: linear-gradient(to right, #1d1b1a, #2c1f1a);
 }
+.hero.small {
+  padding: 60px 20px;
+}
+
 .hero h1 {
   font-family: 'DM Serif Display', serif;
-  font-size: 3rem;
+  font-size: 3.5rem;
+  color: #d7c1a0;
+  margin-bottom: 10px;
 }
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #c4b8a4;
+}
+
 .cta {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background-color: #b76e79;
-  color: #fff;
-  text-decoration: none;
+  background-color: #a8745d;
+  color: white;
+  padding: 14px 28px;
   border-radius: 8px;
+  display: inline-block;
+  margin: 10px;
   font-weight: bold;
-  transition: all 0.3s ease;
 }
-.cta:hover {
-  box-shadow: 0 0 12px rgba(183, 110, 121, 0.7);
-  transform: translateY(-2px);
+.cta.secondary {
+  background-color: transparent;
+  border: 2px solid #a8745d;
 }
+
 section {
-  padding: 50px 20px;
-  text-align: center;
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
 }
+
 h2 {
   font-family: 'DM Serif Display', serif;
-  color: #b76e79;
+  color: #d7c1a0;
   font-size: 2rem;
+  margin-bottom: 20px;
 }
+
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
+
 .card {
-  background-color: #2a2a2a;
-  border: 1px solid #444;
+  background-color: #1d1d1d;
+  padding: 25px;
+  border-left: 5px solid #a8745d;
   border-radius: 10px;
-  padding: 20px;
-  width: 250px;
-  text-align: left;
-  transition: all 0.4s ease;
+  transition: 0.3s ease;
 }
 .card:hover {
-  box-shadow: 0 0 20px rgba(183, 110, 121, 0.5);
-  transform: scale(1.03);
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px rgba(168, 116, 93, 0.3);
 }
+.card ul {
+  padding-left: 20px;
+}
+.desc {
+  color: #c4b8a4;
+  font-style: italic;
+}
+
+.faq-item {
+  margin-bottom: 30px;
+  background: #1a1a1a;
+  padding: 20px;
+  border-left: 4px solid #a8745d;
+  border-radius: 8px;
+}
+
 .kontakt ul {
   list-style: none;
+  text-align: center;
   padding: 0;
 }
-.kontakt ul li {
+.kontakt li {
   margin: 10px 0;
 }
-textarea {
-  width: 80%;
-  padding: 10px;
-  margin-top: 10px;
-  background: #333;
+.kontakt button {
+  background: #a8745d;
   border: none;
-  color: #fff;
+  padding: 8px 14px;
+  color: white;
   border-radius: 6px;
-}
-button {
-  background: #b76e79;
-  border: none;
-  color: #fff;
-  padding: 10px 20px;
-  margin-top: 10px;
   cursor: pointer;
-  border-radius: 6px;
+  margin-left: 10px;
 }
+
 #ai-chat {
   position: fixed;
-  bottom: 20px;
+  bottom: 100px;
   right: 20px;
-  background: #2a2a2a;
-  border: 1px solid #b76e79;
+  background: #222;
+  border: 1px solid #a8745d;
   border-radius: 10px;
-  padding: 20px;
-  width: 260px;
-  font-size: 14px;
+  width: 280px;
+  padding: 15px;
+  z-index: 1000;
+  display: none;
+}
+#ai-chat.active {
+  display: block;
 }
 .chat-box {
-  max-height: 200px;
-  overflow-y: auto;
-  background: #1f1f1f;
+  background: #1b1b1b;
   padding: 10px;
+  height: 150px;
+  overflow-y: auto;
   margin-bottom: 10px;
   border-radius: 6px;
 }
 .msg {
   margin-bottom: 8px;
 }
-.msg.ai {
-  color: #b76e79;
-}
 .msg.user {
-  color: #fff;
   text-align: right;
+  color: #fff;
 }
-#ai-chat input {
+.msg.ai {
+  color: #d7c1a0;
+}
+input[type="text"] {
   width: 100%;
   padding: 8px;
-  margin-top: 10px;
   border: none;
-  border-radius: 6px;
   background: #333;
-  color: white;
+  color: #fff;
+  border-radius: 5px;
 }
 footer {
-  background: #111;
   text-align: center;
-  padding: 20px;
+  padding: 30px;
   font-size: 0.9rem;
+  color: #888;
 }
-.faq {
-  background-color: #1a1a1a;
-  padding: 60px 20px;
-}
-.faq h2 {
-  text-align: center;
-  font-size: 2rem;
-  color: #b76e79;
-  margin-bottom: 30px;
-}
-.faq-item {
-  max-width: 800px;
-  margin: 0 auto 30px auto;
-  padding: 20px;
-  background-color: #262626;
-  border-left: 4px solid #b76e79;
-  border-radius: 8px;
-}
-.faq-item h4 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #f0f0f0;
-}
-.faq-item p {
-  font-size: 0.95rem;
-  color: #ccc;
-  margin: 0;
-}
-
