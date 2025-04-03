@@ -4,8 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VELUREA – Agencja OnlyFans</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: #1c1c2e;
+      --card-bg: #2a2a3d;
+      --accent: #ffb6c1;
+      --text: #ffffff;
+      --light-text: #dddddd;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,14 +21,25 @@
     }
 
     body {
-      background-color: #0d0d0d;
-      color: #fff;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text);
       scroll-behavior: smooth;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--accent);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
     }
 
     header {
-      background: #000;
+      background: #111;
       padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -31,55 +50,46 @@
     }
 
     .logo {
-      font-family: 'DM Serif Display', serif;
       font-size: 2rem;
-      color: gold;
+      font-family: 'Playfair Display', serif;
+      color: var(--accent);
     }
 
     nav ul {
       display: flex;
-      gap: 2rem;
       list-style: none;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
+      gap: 2rem;
     }
 
     nav a:hover {
-      color: gold;
+      text-decoration: underline;
     }
 
     .hero {
-      background: linear-gradient(to right, #000, #1a1a1a);
+      padding: 8rem 2rem;
       text-align: center;
-      padding: 10rem 2rem;
+      background: linear-gradient(to bottom right, #1c1c2e, #2a2a3d);
     }
 
     .hero h1 {
-      font-family: 'DM Serif Display', serif;
       font-size: 4rem;
-      color: gold;
     }
 
     .hero p {
-      font-size: 1.5rem;
       margin-top: 1rem;
+      font-size: 1.5rem;
     }
 
     .cta-btn {
       margin-top: 2rem;
-      background: gold;
+      background: var(--accent);
       color: #000;
       padding: 1rem 2rem;
       font-weight: bold;
-      text-decoration: none;
+      border: none;
       border-radius: 5px;
-      transition: background 0.3s;
-      display: inline-block;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
     .cta-btn:hover {
@@ -88,134 +98,112 @@
 
     section {
       padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
+      max-width: 1200px;
+      margin: auto;
     }
 
     h2 {
-      font-size: 2rem;
       margin-bottom: 2rem;
-      font-family: 'DM Serif Display', serif;
-      color: gold;
+      font-size: 2.5rem;
     }
 
-    .why-velurea li {
-      margin: 0.5rem 0;
-    }
-
-    .services-grid {
+    .grid {
       display: grid;
-      grid-template-columns: 1fr;
       gap: 2rem;
     }
 
-    .service-card {
-      background: #1a1a1a;
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .card {
+      background: var(--card-bg);
       padding: 2rem;
-      border-left: 4px solid gold;
-      transition: transform 0.6s ease, opacity 0.6s ease;
-      opacity: 0;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card p {
+      color: var(--light-text);
     }
 
     .faq-item {
-      background: #1a1a1a;
-      margin-bottom: 1rem;
+      background: var(--card-bg);
       padding: 1rem;
-      border-left: 3px solid gold;
+      margin-bottom: 1rem;
+      border-radius: 5px;
       cursor: pointer;
     }
 
     .faq-item .answer {
       display: none;
-      margin-top: 0.5rem;
-      color: #ccc;
+      color: var(--light-text);
     }
 
     .faq-item.active .answer {
       display: block;
+      margin-top: 0.5rem;
     }
 
-    form {
+    .contact-grid {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 2rem;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .contact-form, .contact-socials {
+      flex: 1;
+      min-width: 300px;
     }
 
     input, textarea {
+      width: 100%;
       padding: 1rem;
-      background: #111;
-      border: 1px solid #333;
-      color: #fff;
+      margin-bottom: 1rem;
+      border: none;
       border-radius: 5px;
-      resize: none;
+      background: #333;
+      color: #fff;
     }
 
     button {
-      padding: 1rem;
-      background: gold;
+      background: var(--accent);
       color: #000;
-      font-weight: bold;
+      padding: 1rem 2rem;
       border: none;
-      cursor: pointer;
       border-radius: 5px;
-    }
-
-    .socials a {
-      margin-right: 1rem;
-      color: gold;
-      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     footer {
+      background: #111;
       text-align: center;
       padding: 2rem;
-      background: #000;
       font-size: 0.9rem;
+      color: #aaa;
     }
 
-    footer .footer-links a {
+    footer a {
+      color: var(--accent);
       margin: 0 0.5rem;
-      color: gold;
-      text-decoration: none;
     }
 
-    .animate {
-      opacity: 1 !important;
-      transform: translateX(0) translateY(0) !important;
-    }
-
-    .slide-left { transform: translateX(-50px); }
-    .slide-right { transform: translateX(50px); }
-    .slide-up { transform: translateY(50px); }
-    .slide-down { transform: translateY(-50px); }
-    .fade-in { opacity: 0; }
-
-    /* RESPONSYWNOŚĆ */
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        background: #000;
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        display: none;
-      }
-
-      nav ul.active {
-        display: flex;
-      }
-
+    @media(max-width: 768px) {
       .hero h1 {
         font-size: 2.5rem;
       }
 
-      .hero p {
-        font-size: 1.2rem;
+      h2 {
+        font-size: 2rem;
       }
 
-      .services-grid {
-        grid-template-columns: 1fr;
+      .contact-grid {
+        flex-direction: column;
       }
     }
   </style>
@@ -227,7 +215,7 @@
     <nav>
       <ul>
         <li><a href="#onas">O Nas</a></li>
-        <li><a href="#uslugi">Nasze Usługi</a></li>
+        <li><a href="#uslugi">Usługi</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
@@ -242,83 +230,76 @@
 
   <section id="onas">
     <h2>O Nas</h2>
-    <p>
-      VELUREA to profesjonalna agencja, która pomaga kobietom zarabiać na OnlyFans. Zajmujemy się zarządzaniem kontem, produkcją treści i marketingiem, zapewniając pełne wsparcie na każdym etapie współpracy.
-    </p>
-    <p>"Your body, our business" – Ty tworzysz treści, my zajmujemy się resztą.</p>
-    <ul class="why-velurea">
-      <li><strong>Profesjonalizm:</strong> Doświadczenie w prowadzeniu kont OnlyFans.</li>
-      <li><strong>Bezpieczeństwo:</strong> Prywatność to priorytet.</li>
-      <li><strong>Kompleksowa obsługa:</strong> Od treści po marketing.</li>
-      <li><strong>Zaangażowanie:</strong> Długoterminowa współpraca.</li>
-    </ul>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Kim jesteśmy?</h3>
+        <p>VELUREA to profesjonalna agencja wspierająca kobiety w sukcesie na OnlyFans.</p>
+      </div>
+      <div class="card">
+        <h3>Nasze podejście</h3>
+        <p>"Your body, our business" – Ty tworzysz treści, my zajmujemy się resztą.</p>
+      </div>
+      <div class="card">
+        <h3>Bezpieczeństwo</h3>
+        <p>Chronimy Twoją prywatność i anonimowość na każdym etapie.</p>
+      </div>
+      <div class="card">
+        <h3>Pełna obsługa</h3>
+        <p>Od produkcji po marketing – Ty robisz content, my robimy resztę.</p>
+      </div>
+    </div>
   </section>
 
   <section id="uslugi">
     <h2>Nasze Usługi</h2>
-    <div class="services-grid">
-      <div class="service-card slide-left">Zarządzanie kontem OnlyFans 24/7 – wiadomości, PPV, tipy, subskrybenci.</div>
-      <div class="service-card slide-right">Produkcja treści – zdjęcia, wideo, stylizacje, edycja.</div>
-      <div class="service-card slide-up">Strategia marketingowa – Instagram, TikTok, Twitter.</div>
-      <div class="service-card slide-down">Kampanie reklamowe – przyciąganie nowych fanów.</div>
-      <div class="service-card fade-in">Analiza wyników – raporty, wzrost konta.</div>
-      <div class="service-card slide-right">Planowanie contentu – kalendarz, ciągłość publikacji.</div>
-      <div class="service-card slide-down">Edukacja – szkolenia, rozwój konta, większe zarobki.</div>
+    <div class="grid grid-2">
+      <div class="card"><h3>Zarządzanie kontem</h3><p>24/7 support, wiadomości, sprzedaż PPV i tipy.</p></div>
+      <div class="card"><h3>Produkcja treści</h3><p>Zdjęcia, wideo, stylizacje, edycja – full pakiet.</p></div>
+      <div class="card"><h3>Marketing</h3><p>Strategie na IG, TikTok, Twitter – więcej fanów.</p></div>
+      <div class="card"><h3>Reklamy</h3><p>Kampanie przyciągające płacących subów.</p></div>
+      <div class="card"><h3>Analiza wyników</h3><p>Raporty, wnioski, rozwój konta.</p></div>
+      <div class="card"><h3>Kalendarz publikacji</h3><p>Planowanie contentu i ciągłość obecności.</p></div>
+      <div class="card"><h3>Edukacja</h3><p>Szkolenia z zarządzania i zarabiania na OF.</p></div>
     </div>
   </section>
 
   <section id="faq">
-    <h2>Najczęściej zadawane pytania</h2>
-    <div class="faq-item"><div class="question">Jak mogę dołączyć?</div><div class="answer">Skontaktuj się przez formularz lub bezpośrednio.</div></div>
-    <div class="faq-item"><div class="question">Czy muszę mieć konto?</div><div class="answer">Nie, pomożemy Ci je założyć i przygotować.</div></div>
-    <div class="faq-item"><div class="question">Jakie są koszty?</div><div class="answer">Koszty ustalamy indywidualnie według pakietu.</div></div>
-    <div class="faq-item"><div class="question">Czy mogę zrezygnować?</div><div class="answer">Tak, w dowolnym momencie.</div></div>
-    <div class="faq-item"><div class="question">Czy mam pełną kontrolę?</div><div class="answer">Tak, Ty decydujesz, my wspieramy.</div></div>
+    <h2>FAQ</h2>
+    <div class="faq-item"><div class="question">Jak dołączyć?</div><div class="answer">Skontaktuj się z nami przez formularz lub DM.</div></div>
+    <div class="faq-item"><div class="question">Czy muszę mieć konto?</div><div class="answer">Nie – pomożemy Ci je założyć i wystartować.</div></div>
+    <div class="faq-item"><div class="question">Jakie są koszty?</div><div class="answer">Pakiety ustalane indywidualnie – Ty wybierasz.</div></div>
+    <div class="faq-item"><div class="question">Czy mam kontrolę nad kontem?</div><div class="answer">Zawsze! My wspieramy, Ty decydujesz.</div></div>
   </section>
 
   <section id="kontakt">
     <h2>Kontakt</h2>
-    <p>Gotowa na zmianę? Skontaktuj się z nami!</p>
-    <form action="mailto:kontakt@velurea.pl" method="POST" enctype="text/plain">
-      <input type="text" name="name" placeholder="Imię" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="text" name="instagram" placeholder="Instagram" />
-      <textarea name="message" placeholder="Wiadomość" required></textarea>
-      <button type="submit">Wyślij</button>
-    </form>
-    <div class="socials">
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">X</a>
+    <div class="contact-grid">
+      <div class="contact-form">
+        <form action="mailto:kontakt@velurea.pl" method="POST" enctype="text/plain">
+          <input type="text" name="name" placeholder="Imię" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="text" name="instagram" placeholder="Instagram" />
+          <textarea name="message" placeholder="Wiadomość" required></textarea>
+          <button type="submit">Wyślij</button>
+        </form>
+      </div>
+      <div class="contact-socials">
+        <h3>Social Media</h3>
+        <div class="grid grid-2">
+          <div class="card"><strong>Instagram</strong><br>@velurea.official</div>
+          <div class="card"><strong>TikTok</strong><br>@velurea.tok</div>
+          <div class="card"><strong>X (Twitter)</strong><br>@velurea_x</div>
+          <div class="card"><strong>Email</strong><br>kontakt@velurea.pl</div>
+        </div>
+      </div>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 VELUREA</p>
-    <div class="footer-links">
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">X</a>
-      <a href="mailto:kontakt@velurea.pl">kontakt@velurea.pl</a>
-    </div>
-    <p>Godziny otwarcia: 24/7</p>
+    <p>&copy; 2025 VELUREA. All rights reserved. | Godziny otwarcia: 24/7</p>
   </footer>
 
   <script>
-    // Animacje usług
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.service-card').forEach(card => {
-      observer.observe(card);
-    });
-
-    // FAQ toggle
     document.querySelectorAll('.faq-item').forEach(item => {
       item.addEventListener('click', () => {
         item.classList.toggle('active');
