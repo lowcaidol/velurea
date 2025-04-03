@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VELUREA – Agencja OnlyFans</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #1c1c2e;
@@ -17,28 +17,21 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Outfit', sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      scroll-behavior: smooth;
+      line-height: 1.8;
     }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--accent);
-    }
-
-    a { color: var(--accent); text-decoration: none; }
 
     header {
       background: #111;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 2rem;
+      padding: 1rem 2rem;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 1000;
     }
 
     .logo img {
@@ -46,17 +39,19 @@
     }
 
     nav ul {
+      list-style: none;
       display: flex;
       gap: 2rem;
-      list-style: none;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    nav a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
     }
 
     .hero {
-      padding: 10rem 2rem 5rem;
+      padding: 8rem 2rem 5rem;
       text-align: center;
       background: linear-gradient(to bottom right, #1c1c2e, #2a2a3d);
     }
@@ -67,7 +62,7 @@
     }
 
     .hero p {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       margin-bottom: 2rem;
     }
 
@@ -79,12 +74,11 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: 0.3s;
     }
 
     .cta-btn:hover {
       transform: scale(1.05);
-      background: #fff;
     }
 
     section {
@@ -100,48 +94,23 @@
       gap: 2rem;
     }
 
-    .grid-2 {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
     .card {
       background: var(--card);
       padding: 2rem;
       border-radius: 10px;
-      transition: transform 0.3s ease;
+      transition: 0.3s;
     }
 
     .card:hover {
       transform: translateY(-5px);
     }
 
-    .faq-item {
-      background: var(--card);
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .faq-item .answer {
-      display: none;
-      color: var(--muted);
-    }
-
-    .faq-item.active .answer {
-      display: block;
-      margin-top: 0.5rem;
-    }
-
-    .contact-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-
-    .contact-form, .contact-info {
-      flex: 1;
-      min-width: 300px;
+    h1, h2, h3 {
+      color: var(--accent);
     }
 
     input, textarea {
@@ -164,63 +133,67 @@
       cursor: pointer;
     }
 
-    .socials svg {
-      width: 30px;
-      height: 30px;
-      margin-right: 1rem;
-      fill: var(--accent);
-      transition: transform 0.3s;
+    .faq-item {
+      background: var(--card);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
-    .socials a:hover svg {
-      transform: scale(1.2);
+    .faq-item .answer {
+      display: none;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    .faq-item.active .answer {
+      display: block;
     }
 
     footer {
       background: #111;
       padding: 4rem 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
       color: var(--muted);
     }
 
-    footer div {
-      flex: 1;
-      min-width: 250px;
-      margin-bottom: 2rem;
-    }
-
-    footer h3 {
-      color: var(--accent);
-      margin-bottom: 1rem;
+    footer .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
     }
 
     footer a {
       color: var(--accent);
-      display: inline-block;
+      text-decoration: none;
+      display: block;
       margin-bottom: 0.5rem;
     }
 
-    .footer-bottom {
-      text-align: center;
-      width: 100%;
-      margin-top: 2rem;
-      font-size: 0.9rem;
+    footer h4 {
+      margin-bottom: 1rem;
+      color: var(--accent);
     }
 
-    @media (max-width: 768px) {
+    .footer-bottom {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media(max-width: 768px) {
       .hero h1 { font-size: 2.5rem; }
       .hero p { font-size: 1.2rem; }
-      .contact-container { flex-direction: column; }
-      nav ul { flex-direction: column; gap: 1rem; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo"><img src="logo.png" alt="VELUREA Logo"></div>
+    <div class="logo">
+      <img src="https://i.imgur.com/IC7pH3l.png" alt="VELUREA Logo">
+    </div>
     <nav>
       <ul>
         <li><a href="#onas">O Nas</a></li>
@@ -240,79 +213,88 @@
   <section id="onas" class="centered-section">
     <h2>O Nas</h2>
     <p style="max-width:800px;margin:0 auto 2rem;">
-      VELUREA to profesjonalna agencja, która pomaga kobietom zarabiać na OnlyFans.
-      Zajmujemy się zarządzaniem kontem, produkcją treści i marketingiem, zapewniając pełne wsparcie na każdym etapie współpracy.
+      VELUREA to agencja wspierająca kobiety w zarabianiu na OnlyFans. Zajmujemy się
+      produkcją treści, marketingiem i zarządzaniem kontami.
     </p>
-    <div class="grid grid-2">
-      <div class="card"><h3>Profesjonalizm</h3><p>Doświadczenie w zarządzaniu kontami.</p></div>
-      <div class="card"><h3>Bezpieczeństwo</h3><p>Twoja prywatność to nasz priorytet.</p></div>
-      <div class="card"><h3>Kompleksowa obsługa</h3><p>Od contentu po reklamę – my robimy wszystko.</p></div>
-      <div class="card"><h3>Zaangażowanie</h3><p>Pracujemy z Tobą, a nie obok Ciebie.</p></div>
+    <div class="grid grid-3">
+      <div class="card"><h3>Profesjonalizm</h3><p>Doświadczenie, know-how i zespół.</p></div>
+      <div class="card"><h3>Bezpieczeństwo</h3><p>Twoja anonimowość to nasz priorytet.</p></div>
+      <div class="card"><h3>Kompleksowa obsługa</h3><p>Od contentu po sprzedaż PPV.</p></div>
     </div>
   </section>
 
   <section id="uslugi" class="centered-section">
     <h2>Nasze Usługi</h2>
-    <div class="grid grid-2">
-      <div class="card"><h3>Zarządzanie kontem</h3><p>24/7 obsługa wiadomości, sprzedaż PPV, tipy.</p></div>
-      <div class="card"><h3>Produkcja treści</h3><p>Zdjęcia, wideo, stylizacje i edycja.</p></div>
-      <div class="card"><h3>Marketing</h3><p>Promocja na Instagramie, TikToku i X.</p></div>
-      <div class="card"><h3>Reklamy</h3><p>Płatne kampanie do nowych odbiorców.</p></div>
-      <div class="card"><h3>Analiza</h3><p>Raporty, dane i strategie rozwoju.</p></div>
-      <div class="card"><h3>Kalendarz publikacji</h3><p>Pomoc w planowaniu i ciągłości.</p></div>
+    <div class="grid grid-3">
+      <div class="card"><h3>Zarządzanie kontem</h3><p>24/7 obsługa DM, PPV, tipy.</p></div>
+      <div class="card"><h3>Produkcja treści</h3><p>Stylizacje, zdjęcia, wideo, retusz.</p></div>
+      <div class="card"><h3>Marketing</h3><p>IG, TikTok, X – promocja i wzrost.</p></div>
+      <div class="card"><h3>Reklamy</h3><p>Kampanie targetowane do nowych fanów.</p></div>
+      <div class="card"><h3>Analiza</h3><p>Raporty, statystyki, optymalizacja.</p></div>
+      <div class="card"><h3>Kalendarz publikacji</h3><p>Pomoc w planowaniu postów.</p></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>Najczęściej zadawane pytania</h2>
+    <div class="faq-item">
+      <div class="question">Jak dołączyć do agencji?</div>
+      <div class="answer">Wystarczy wypełnić formularz lub napisać do nas na Instagramie.</div>
+    </div>
+    <div class="faq-item">
+      <div class="question">Czy muszę mieć konto?</div>
+      <div class="answer">Nie, możemy Ci je założyć i skonfigurować od zera.</div>
+    </div>
+    <div class="faq-item">
+      <div class="question">Ile kosztuje współpraca?</div>
+      <div class="answer">Pakiety są dopasowane do Ciebie. Skontaktuj się z nami, a dobierzemy opcję.</div>
+    </div>
+    <div class="faq-item">
+      <div class="question">Czy mam kontrolę nad swoim kontem?</div>
+      <div class="answer">Tak – masz pełną kontrolę, my tylko wspieramy i rozwijamy.</div>
     </div>
   </section>
 
   <section id="kontakt">
     <h2>Kontakt</h2>
-    <div class="contact-container">
-      <div class="contact-form">
-        <form action="mailto:kontakt@velurea.pl" method="POST" enctype="text/plain">
-          <input type="text" name="name" placeholder="Imię" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <input type="text" name="instagram" placeholder="Instagram" />
-          <textarea name="message" placeholder="Wiadomość" required></textarea>
-          <button type="submit">Wyślij</button>
-        </form>
+    <div class="grid grid-3">
+      <div>
+        <h3>Instagram</h3>
+        <a href="https://www.instagram.com/workwithvelurea/" target="_blank">workwithvelurea</a>
       </div>
-      <div class="contact-info">
-        <h3>Social Media</h3>
-        <div class="socials">
-          <a href="https://www.instagram.com/workwithvelurea/" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.5.5.6.3 1 .7 1.5 1.3.5.6.9 1.3 1 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.5 2.5-.3.6-.7 1-1.3 1.5-.6.5-1.3.9-2.5 1-.9.1-1.3.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.5-.5-.6-.3-1-.7-1.5-1.3-.5-.6-.9-1.3-1-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-2 .5-2.5.3-.6.7-1 1.3-1.5.6-.5 1.3-.9 2.5-1 .9-.1 1.3-.1 4.9-.1M12 0C8.7 0 8.3 0 7 .1c-1.3.1-2.3.3-3.2.7C3 1.3 2.2 2.1 1.7 3c-.4.9-.6 1.9-.7 3.2C1 8.3 1 8.7 1 12s0 3.7.1 5c.1 1.3.3 2.3.7 3.2.5.9 1.3 1.7 2.2 2.2.9.4 1.9.6 3.2.7 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.3-.3 3.2-.7.9-.5 1.7-1.3 2.2-2.2.4-.9.6-1.9.7-3.2.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.3-.7-3.2C22.7 2.2 21.9 1.3 21 1c-.9-.4-1.9-.6-3.2-.7C15.7 0 15.3 0 12 0z"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@workwithvelurea" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.75 0c.41 0 .75.34.75.75v2.27c0 .96.78 1.74 1.74 1.74h.24a4.76 4.76 0 002.95 1.01v2.34a7.09 7.09 0 01-2.95-.66v7.05a5.25 5.25 0 11-5.25-5.25c.26 0 .5.02.75.07v2.29a2.99 2.99 0 102.25 2.9V0h.07z"/></svg>
-          </a>
-          <a href="https://x.com/WorkWithVelurea" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.64 1.52h-5.1l-5.97 8.3-6.09-8.3H0l7.98 10.8L.15 22.48h5.12l6.58-9.14 6.68 9.14H24l-8.24-10.9 7.88-10.06z"/></svg>
-          </a>
-          <a href="mailto:kontakt@velurea.pl" target="_blank">
-            📧
-          </a>
-        </div>
+      <div>
+        <h3>TikTok</h3>
+        <a href="https://www.tiktok.com/@workwithvelurea" target="_blank">@workwithvelurea</a>
+      </div>
+      <div>
+        <h3>X (Twitter)</h3>
+        <a href="https://x.com/WorkWithVelurea" target="_blank">@WorkWithVelurea</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <div>
-      <h3>VELUREA</h3>
-      <p>Kompleksowa agencja do rozwoju Twojego konta OnlyFans. Profesjonalnie. Dyskretnie. Skutecznie.</p>
+    <div class="grid">
+      <div>
+        <h4>VELUREA</h4>
+        <p>Agencja OnlyFans – profesjonalne zarządzanie, content, marketing i rozwój.</p>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <a href="#onas">O Nas</a>
+        <a href="#uslugi">Usługi</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p>Email: <a href="mailto:kontakt@velurea.pl">kontakt@velurea.pl</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/workwithvelurea/">@workwithvelurea</a></p>
+      </div>
     </div>
-    <div>
-      <h3>Menu</h3>
-      <a href="#onas">O Nas</a><br>
-      <a href="#uslugi">Usługi</a><br>
-      <a href="#faq">FAQ</a><br>
-      <a href="#kontakt">Kontakt</a>
+    <div class="footer-bottom">
+      &copy; 2025 VELUREA. Wszystkie prawa zastrzeżone.
     </div>
-    <div>
-      <h3>Kontakt</h3>
-      <p>kontakt@velurea.pl</p>
-      <p>Instagram, TikTok, X – @workwithvelurea</p>
-    </div>
-    <div class="footer-bottom">&copy; 2025 VELUREA. Wszystkie prawa zastrzeżone.</div>
   </footer>
 
   <script>
