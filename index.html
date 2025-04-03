@@ -1,101 +1,64 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Velurea – Zarabiaj z klasą</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VELUREA – Agencja Premium</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
+  <header class="hero">
+    <img src="logo.png" alt="Velurea Logo" class="logo" />
     <h1>VELUREA</h1>
     <p>Your body, our business.</p>
     <a href="#kontakt" class="cta">Zgłoś się teraz</a>
   </header>
 
-  <section id="onas">
+  <section class="o-nas" data-aos="fade-up">
     <h2>O NAS</h2>
     <p>
-      Velurea to agencja stworzona z myślą o kobietach, które nie chcą tylko zarabiać — chcą zarabiać profesjonalnie.
-      Działamy skutecznie, kreatywnie i dyskretnie. Jesteśmy za kulisami najbardziej dochodowych kont OnlyFans w Polsce.
-      To nie pomoc — to system, który działa.
+      Velurea to agencja premium dla twórczyń OF. Tworzymy strategie, prowadzimy konta, montujemy content i rozkręcamy zarobki – z dyskrecją i klasą.
     </p>
   </section>
 
-  <section id="pakiety">
-    <h2>Pakiety współpracy</h2>
-
-    <div class="pakiet">
-      <h3>💎 VELUREA DIAMOND — 90/10</h3>
-      <p>Wymyślamy content, nagrywamy, robimy zdjęcia, prowadzimy konto. Ty 10%, my 90% – full obsługa.</p>
-    </div>
-
-    <div class="pakiet">
-      <h3>🖤 FULL SERVICE — 30/70</h3>
-      <p>Ty nagrywasz, my robimy całą resztę. 30% dla Ciebie.</p>
-    </div>
-
-    <div class="pakiet">
-      <h3>🔥 PREMIUM — 60/40</h3>
-      <p>Ty tworzysz content, my sprzedajemy. 60% dla Ciebie.</p>
-    </div>
-
-    <div class="pakiet">
-      <h3>👯‍♀️ PARTNERSKI — 50/50</h3>
-      <p>Współpraca oparta na równości i wspólnych decyzjach.</p>
-    </div>
-
-    <div class="pakiet">
-      <h3>👑 EXCLUSIVE — 80/20</h3>
-      <p>Ty działasz, my doradzamy. Strategia, audyt, wsparcie.</p>
-    </div>
-
-    <div class="pakiet">
-      <h3>🐣 STARTER — 90/10 (dla modelki)</h3>
-      <p>Pomoc na start: branding, strategia, konto OF. Ty 90%.</p>
-    </div>
-
-    <div class="pakiet">
-      <h3>🧠 CONSULTING PRO — 100%</h3>
-      <p>Konsultacja, plan działania, audyt konta. 100% Twoje.</p>
-    </div>
-
-    <div class="pakiet">
-      <h3>🔮 VIP CUSTOM</h3>
-      <p>Pakiet szyty na miarę. Ty decydujesz.</p>
+  <section class="pakiety">
+    <h2>Nasze pakiety</h2>
+    <div class="cards">
+      <div class="card" data-aos="fade-up"><h3>💎 Diamond</h3><p>90/10 – Full serwis. My robimy wszystko.</p></div>
+      <div class="card" data-aos="fade-up"><h3>🔥 Premium</h3><p>60/40 – Ty tworzysz, my zarabiamy.</p></div>
+      <div class="card" data-aos="fade-up"><h3>👯 Partnerski</h3><p>50/50 – gra zespołowa.</p></div>
+      <div class="card" data-aos="fade-up"><h3>🧠 Consulting</h3><p>100% – Ty działasz, my doradzamy.</p></div>
     </div>
   </section>
 
-  <section id="kontakt">
-    <h2>📲 Skontaktuj się z nami</h2>
-    <p>
-      Chcesz dołączyć do VELUREA? Masz pytania? Napisz do nas:
-    </p>
-
-    <ul class="kontakt-links">
-      <li>
-        <a href="mailto:kontakt@velurea.pl" target="_blank">📧 kontakt@velurea.pl</a>
-        <button onclick="copyEmail()">📋 Skopiuj maila</button>
-      </li>
-      <li><a href="https://www.instagram.com/workwithvelurea/" target="_blank">📸 Instagram</a></li>
-      <li><a href="https://www.tiktok.com/@workwithvelurea" target="_blank">🎥 TikTok</a></li>
-      <li><a href="https://x.com/WorkWithVelurea" target="_blank">🐦 X (Twitter)</a></li>
+  <section class="kontakt" id="kontakt" data-aos="fade-up">
+    <h2>Kontakt</h2>
+    <ul>
+      <li>📧 <span id="email">kontakt@velurea.pl</span> <button onclick="copyEmail()">📋 Skopiuj</button></li>
+      <li>📸 <a href="https://www.instagram.com/workwithvelurea/" target="_blank">Instagram</a></li>
+      <li>🎥 <a href="https://www.tiktok.com/@workwithvelurea" target="_blank">TikTok</a></li>
+      <li>🐦 <a href="https://x.com/WorkWithVelurea" target="_blank">X (Twitter)</a></li>
     </ul>
-
     <form>
-      <label for="message">Napisz wiadomość:</label><br>
-      <textarea id="message" name="message" rows="4" cols="40" placeholder="Twoja wiadomość..."></textarea><br>
+      <textarea placeholder="Napisz do nas..." rows="4"></textarea><br>
       <button type="submit">Wyślij</button>
     </form>
   </section>
 
   <div id="ai-chat">
-    <h3>🤖 Asystent VELUREA</h3>
-    <p>Cześć! Jestem Twoją wirtualną menadżerką. Masz pytanie? Napisz!</p>
-    <input type="text" placeholder="Zadaj pytanie...">
-    <button>Wyślij</button>
+    <h3>🤖 VELUREA AI</h3>
+    <div class="chat-box" id="chatBox">
+      <div class="msg ai">Cześć! W czym mogę pomóc? ✨</div>
+    </div>
+    <input type="text" id="userInput" placeholder="Zadaj pytanie..." />
+    <button onclick="sendMessage()">Wyślij</button>
   </div>
 
+  <footer><p>© 2025 VELUREA. All rights reserved.</p></footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
   <script src="script.js"></script>
 </body>
 </html>
