@@ -1,171 +1,170 @@
+/* Fonts + Reset */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #111;
-  color: #f5f5f5;
-  line-height: 1.7;
+  background: #0e0e0e;
+  color: #f2f2f2;
+  line-height: 1.8;
 }
 
 a {
-  color: #d4af7f;
+  color: #bfa382;
   text-decoration: none;
+  transition: 0.2s ease;
+}
+a:hover {
+  color: #d8c3a5;
 }
 
 .logo {
   height: 50px;
-  margin: 20px;
+  margin: 25px;
 }
 
 .top-bar {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  padding: 0 20px;
 }
 
 .hero {
   text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(to right, #1d1b1a, #2c1f1a);
+  padding: 100px 30px 80px;
+  background: linear-gradient(to bottom, #151515, #0e0e0e);
 }
 .hero.small {
-  padding: 60px 20px;
+  padding: 60px 30px;
 }
-
 .hero h1 {
   font-family: 'DM Serif Display', serif;
-  font-size: 3.5rem;
-  color: #d7c1a0;
+  font-size: 4rem;
   margin-bottom: 10px;
+  color: #d8c3a5;
 }
-
 .hero p {
+  font-size: 1.2rem;
+  color: #ccc;
   max-width: 700px;
   margin: 0 auto;
-  color: #c4b8a4;
 }
 
 .cta {
-  background-color: #a8745d;
-  color: white;
-  padding: 14px 28px;
-  border-radius: 8px;
+  background: #bfa382;
+  color: #0e0e0e;
+  padding: 14px 32px;
+  border-radius: 30px;
+  margin: 20px 10px 0;
   display: inline-block;
-  margin: 10px;
   font-weight: bold;
 }
 .cta.secondary {
-  background-color: transparent;
-  border: 2px solid #a8745d;
+  background: transparent;
+  border: 2px solid #bfa382;
+  color: #bfa382;
+}
+.cta:hover {
+  background: #d8c3a5;
+  color: #111;
 }
 
+/* Sekcje */
 section {
-  padding: 60px 20px;
-  max-width: 1000px;
+  padding: 80px 30px;
+  max-width: 1100px;
   margin: auto;
 }
-
 h2 {
   font-family: 'DM Serif Display', serif;
-  color: #d7c1a0;
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #d8c3a5;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
+/* Pakiety */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
 }
-
 .card {
-  background-color: #1d1d1d;
-  padding: 25px;
-  border-left: 5px solid #a8745d;
-  border-radius: 10px;
+  background: #191919;
+  padding: 30px;
+  border-radius: 16px;
+  border-left: 6px solid #bfa382;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
   transition: 0.3s ease;
 }
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 15px rgba(168, 116, 93, 0.3);
+  box-shadow: 0 10px 25px rgba(255,255,255,0.06);
+}
+.card h2, .card h3 {
+  color: #e6d3b3;
 }
 .card ul {
   padding-left: 20px;
 }
 .desc {
-  color: #c4b8a4;
+  margin-top: 15px;
   font-style: italic;
+  color: #c2b59b;
 }
 
+/* FAQ */
 .faq-item {
-  margin-bottom: 30px;
-  background: #1a1a1a;
-  padding: 20px;
-  border-left: 4px solid #a8745d;
-  border-radius: 8px;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: #181818;
+  border-left: 4px solid #bfa382;
+  border-radius: 10px;
+}
+.faq-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
 }
 
+/* Kontakt */
+.kontakt {
+  text-align: center;
+}
 .kontakt ul {
   list-style: none;
-  text-align: center;
   padding: 0;
 }
 .kontakt li {
   margin: 10px 0;
 }
 .kontakt button {
-  background: #a8745d;
+  background: #bfa382;
   border: none;
-  padding: 8px 14px;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
+  color: #0e0e0e;
+  padding: 10px 20px;
+  border-radius: 25px;
   margin-left: 10px;
+  cursor: pointer;
+}
+.kontakt button:hover {
+  background: #d8c3a5;
 }
 
-#ai-chat {
-  position: fixed;
-  bottom: 100px;
-  right: 20px;
-  background: #222;
-  border: 1px solid #a8745d;
-  border-radius: 10px;
-  width: 280px;
-  padding: 15px;
-  z-index: 1000;
-  display: none;
-}
-#ai-chat.active {
-  display: block;
-}
-.chat-box {
-  background: #1b1b1b;
-  padding: 10px;
-  height: 150px;
-  overflow-y: auto;
-  margin-bottom: 10px;
-  border-radius: 6px;
-}
-.msg {
-  margin-bottom: 8px;
-}
-.msg.user {
-  text-align: right;
-  color: #fff;
-}
-.msg.ai {
-  color: #d7c1a0;
-}
-input[type="text"] {
-  width: 100%;
-  padding: 8px;
-  border: none;
-  background: #333;
-  color: #fff;
-  border-radius: 5px;
-}
+/* Footer */
 footer {
+  padding: 40px 20px;
   text-align: center;
-  padding: 30px;
   font-size: 0.9rem;
   color: #888;
+}
+
+/* Animacje */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.7s ease forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
