@@ -7,61 +7,40 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
-<body onload="showCloud()">
+<body>
 
-  <!-- GÓRNE LOGO I HEADER -->
-  <header class="hero">
-    <div class="top-bar">
-      <img src="V (1).png" alt="Velurea Logo" class="logo" />
-    </div>
-    <div class="hero-text">
-      <h1>VELUREA</h1>
-      <p class="slogan">Your body. Our business.<br />Zero chaos. Zero kompromisów. 100% zarabiania.</p>
-      <div class="button-group">
-        <a href="pakiety.html" class="cta">💼 Zobacz pakiety</a>
-        <a href="faq.html" class="cta secondary">❓ FAQ</a>
-      </div>
-    </div>
+  <!-- Górna belka na każdej stronie -->
+  <header class="top-bar">
+    <a href="index.html" class="logo">VELUREA</a>
+    <nav class="nav-links">
+      <a href="pakiety.html">Pakiety</a>
+      <a href="faq.html">FAQ</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
   </header>
 
-  <!-- WYSUWANA CHMURKA O FIRMIE -->
-  <div class="about-cloud" id="aboutCloud">
-    <div class="about-inner">
-      <h2>O VELUREA</h2>
-      <p>
-        VELUREA to nie tylko agencja.<br />
-        To system, który zarabia za Ciebie.<br /><br />
-
-        Nie obiecujemy lajków – tylko wyniki.<br />
-        Ty jesteś twarzą. My robimy resztę.<br /><br />
-
-        Strategia. Promocja. Obsługa konta. Sprzedaż.<br />
-        Nawet stylizacje i content.<br /><br />
-
-        Jesteśmy zespołem, który działa za kulisami<br />
-        najbardziej dochodowych kont w Polsce.<br /><br />
-
-        Dyskrecja, luksus, rozwój.<br />
-        VELUREA – jeśli chcesz zarabiać jak topka.
-      </p>
-    </div>
-  </div>
-
-  <!-- KONTAKT I SOCIAL MEDIA -->
-  <section class="kontakt">
-    <h2>Kontakt</h2>
-    <p><strong>kontakt@velurea.pl</strong> <button onclick="copyEmail()">📋 Skopiuj</button></p>
-    <ul class="socials">
-      <li><a href="https://www.instagram.com/workwithvelurea/" target="_blank">📸 Instagram</a></li>
-      <li><a href="https://www.tiktok.com/@workwithvelurea" target="_blank">🎥 TikTok</a></li>
-      <li><a href="https://x.com/WorkWithVelurea" target="_blank">🐦 X (Twitter)</a></li>
-    </ul>
+  <!-- Sekcja Opis firmy -->
+  <section class="company-description">
+    <h1>O NAS</h1>
+    <div class="description-text">
+      <p>VELUREA to agencja, która nie tylko pomaga Ci zarabiać, ale i rozwija Twoją markę osobistą.</p>
+      <p>Nasza misja? Stworzyć Cię jako gwiazdę w świecie OnlyFans. Z nami każda kobieta ma szansę na sukces!</p>
+      <p>Zajmujemy się wszystkim: od produkcji contentu po zarządzanie relacjami z fanami. Ty tworzysz, my wykonujemy resztę.</p>
+      <p>Nasze usługi są dostosowane do każdego typu twórczości. U nas nie ma kompromisów – tylko wyniki!</p>
+    
   </section>
 
-  <footer>
-    <p>© 2025 VELUREA. All rights reserved.</p>
+  <!-- Odnośnik do kontaktu -->
+  <section class="contact-link" id="contact">
+    <p><a href="kontakt.html">Skontaktuj się z nami</a></p>
+  </section>
+
+  <!-- Na każdej stronie footer z kontaktem -->
+  <footer class="footer">
+    <p>&copy; 2025 VELUREA. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
+
 </body>
 </html>
