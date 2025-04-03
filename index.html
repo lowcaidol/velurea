@@ -64,31 +64,36 @@
       text-decoration: underline;
     }
 
-    .hero {
-      padding: 8rem 2rem;
-      text-align: center;
-      background: linear-gradient(to bottom right, #1c1c2e, #2a2a3d);
-    }
+.hero {
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+  background: linear-gradient(to bottom right, #1c1c2e, #2a2a3d);
+  position: relative;
+}
 
-    .hero h1 {
-      font-size: 4rem;
-    }
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
 
-    .hero p {
-      margin-top: 1rem;
-      font-size: 1.5rem;
-    }
+.hero p {
+  font-size: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
 
-    .cta-btn {
-      margin-top: 2rem;
-      background: var(--accent);
-      color: #000;
-      padding: 1rem 2rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+.cta-btn {
+  margin-top: 2rem;
+  background: var(--accent);
+  color: #000;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
 
     section {
       padding: 4rem 2rem;
@@ -263,7 +268,7 @@
       <div class="card"><h3>Reklamy</h3><p>Targetowane kampanie reklamowe.</p></div>
       <div class="card"><h3>Analiza</h3><p>Statystyki, raporty i optymalizacja konta.</p></div>
       <div class="card"><h3>Kalendarz publikacji</h3><p>Planowanie i organizacja postów.</p></div>
-      <div class="card"><h3>Edukacja</h3><p>Szkolenia z OnlyFans & zarządzania marką.</p></div>
+
     </div>
   </section>
 
@@ -300,9 +305,49 @@
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 VELUREA – Wszystkie prawa zastrzeżone | Godziny otwarcia: 24/7</p>
-  </footer>
+ <footer style="background: #111; color: white; padding: 4rem 2rem;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; max-width: 1200px; margin: auto;">
+    
+    <!-- LEWO -->
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="color: var(--accent); font-family: 'Playfair Display', serif;">VELUREA</h3>
+      <p style="margin-top: 1rem;">
+        Jesteśmy agencją specjalizującą się w kompleksowym zarządzaniu kontami OnlyFans.
+        Naszym celem jest maksymalizacja Twoich zysków przy minimalnym wysiłku z Twojej strony.
+      </p>
+      <button style="margin-top: 1.5rem; padding: 0.8rem 1.5rem; background: transparent; border: 1px solid white; color: white; cursor: pointer; font-weight: bold;">Dołącz do nas!</button>
+    </div>
+
+    <!-- ŚRODEK -->
+    <div style="flex: 1; min-width: 200px;">
+      <h4 style="margin-bottom: 1rem; color: var(--accent);">Menu</h4>
+      <ul style="list-style: none; padding: 0; line-height: 2;">
+        <li><a href="#" style="color: white;">Strona główna</a></li>
+        <li><a href="#onas" style="color: white;">O nas</a></li>
+        <li><a href="#uslugi" style="color: white;">Usługi</a></li>
+        <li><a href="#faq" style="color: white;">FAQ</a></li>
+        <li><a href="#kontakt" style="color: white;">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <!-- PRAWO -->
+    <div style="flex: 1; min-width: 200px;">
+      <h4 style="margin-bottom: 1rem; color: var(--accent);">Kontakt</h4>
+      <p style="margin-bottom: 0.5rem;">kontakt@velurea.pl</p>
+      <p>Pon – Nd: 24/7</p>
+      <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+        <a href="https://www.instagram.com/workwithvelurea/" target="_blank" title="Instagram" style="color: var(--accent); font-size: 1.5rem;">📸</a>
+        <a href="https://www.tiktok.com/@workwithvelurea" target="_blank" title="TikTok" style="color: var(--accent); font-size: 1.5rem;">🎵</a>
+        <a href="https://x.com/WorkWithVelurea" target="_blank" title="Twitter/X" style="color: var(--accent); font-size: 1.5rem;">🐦</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; color: #aaa; margin-top: 3rem; font-size: 0.9rem;">
+    &copy; 2025 VELUREA. Wszystkie prawa zastrzeżone.
+  </div>
+</footer>
+
 
   <script>
     document.querySelectorAll('.faq-item').forEach(item => {
