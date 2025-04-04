@@ -95,13 +95,52 @@
       from { text-shadow: 0 0 10px #d4af37; }
       to { text-shadow: 0 0 20px #d4af37; }
     }
+    .contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contact-form, .contact-socials {
+  flex: 1;
+  min-width: 300px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+}
+
+.social-links a {
+  display: block;
+  background: #222;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  color: var(--accent);
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.social-links a:hover {
+  background: var(--accent);
+  color: #000;
+}
+
   </style>
 </head>
 <body>
 <canvas id="stars"></canvas>
 
 <header>
-  <div class="logo">VELUREA</div>
+  <div class="logo"><a href="#" style="color: var(--accent); text-decoration: none;">VELUREA</a></div>
   <nav>
     <ul>
       <li><a href="#onas">O Nas</a></li>
@@ -111,6 +150,7 @@
     </ul>
   </nav>
 </header>
+
 
 <section class="hero">
   <h1>VELUREA</h1>
@@ -157,13 +197,29 @@
 
 <section id="kontakt">
   <h2>Kontakt</h2>
-  <form action="mailto:kontakt@velurea.pl" method="POST" enctype="text/plain">
-    <input type="text" name="name" placeholder="Imię" required />
-    <input type="email" name="email" placeholder="Email" required />
-    <input type="text" name="instagram" placeholder="Instagram (opcjonalnie)" />
-    <textarea name="message" placeholder="Wiadomość" required></textarea>
-    <button type="submit">Wyślij wiadomość</button>
-  </form>
+  <div class="contact-grid">
+    <!-- Formularz -->
+    <div class="contact-form">
+      <form action="mailto:kontakt@velurea.pl" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Imię" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="text" name="instagram" placeholder="Instagram (opcjonalnie)" />
+        <textarea name="message" placeholder="Wiadomość" required></textarea>
+        <button type="submit">Wyślij wiadomość</button>
+      </form>
+    </div>
+
+    <!-- Social Media -->
+    <div class="contact-socials">
+      <h3>Znajdziesz nas tutaj:</h3>
+      <div class="social-links">
+        <a href="https://www.instagram.com/workwithvelurea" target="_blank">📸 Instagram</a>
+        <a href="https://www.tiktok.com/@workwithvelurea" target="_blank">🎵 TikTok</a>
+        <a href="https://x.com/WorkWithVelurea" target="_blank">🐦 Twitter (X)</a>
+      </div>
+      <p style="margin-top: 2rem; color: var(--light-text);">kontakt@velurea.pl<br />Działamy 24/7</p>
+    </div>
+  </div>
 </section>
 
 <style>
