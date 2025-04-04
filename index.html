@@ -242,6 +242,12 @@ button:hover {
 #onas h3 {
   font-size: 1.3rem;
 }
+    nav a.active {
+  color: #fff !important;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.25rem;
+}
+
 
 
   </style>
@@ -250,16 +256,19 @@ button:hover {
 <canvas id="stars"></canvas>
 
 <header>
-  <div class="logo"><a href="#" style="color: var(--accent); text-decoration: none;">VELUREA</a></div>
+  <div class="logo">
+    <a href="#" style="color: var(--accent); text-decoration: none;">VELUREA</a>
+  </div>
   <nav>
     <ul>
-      <li><a href="#onas">O Nas</a></li>
-      <li><a href="#uslugi">Usługi</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="#" data-target="onas">O Nas</a></li>
+      <li><a href="#" data-target="uslugi">Usługi</a></li>
+      <li><a href="#" data-target="faq">FAQ</a></li>
+      <li><a href="#" data-target="kontakt">Kontakt</a></li>
     </ul>
   </nav>
 </header>
+
 
 
 <section class="hero">
@@ -499,7 +508,57 @@ button:hover {
       item.classList.toggle('active');
     });
   });
+
+  document.querySelectorAll('a[data-target]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const id = this.getAttribute('data-target');
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+
+        // Usunięcie hasha z adresu po kliknięciu
+        history.replaceState(null, null, ' ');
+      }
+    });
+  });
+  
+  // Scroll do sekcji + usuwanie # z URL
+  document.querySelectorAll('a[data-target]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const id = this.getAttribute('data-target');
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+        history.replaceState(null, null, ' ');
+      }
+    });
+  });
+
+  // ScrollSpy – aktywna sekcja w menu
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a[data-target]');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 150;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('data-target') === current) {
+        link.classList.add('active');
+      }
+    });
+  });
 </script>
+
+
 
 </body>
 </html>
