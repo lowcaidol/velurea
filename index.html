@@ -162,6 +162,74 @@ input, textarea {
   display: block;
 }
 
+button {
+  background: var(--accent);
+  color: #000;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+button:hover {
+  background: #f5d76e;
+  transform: scale(1.03);
+}
+    footer {
+  background: #000;
+  color: var(--light-text);
+  padding: 4rem 2rem;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-col h3 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: #777;
+}
+
 
   </style>
 </head>
@@ -301,18 +369,17 @@ input, textarea {
     display: block;
   }
 </style>
-<footer>
+  <footer>
   <div class="footer-columns">
-    <div>
+    <div class="footer-col">
       <h3>VELUREA</h3>
       <p>
-        Jesteśmy agencją wspierającą kobiety w zarabianiu na OnlyFans.
-        Oferujemy kompleksową obsługę, bezpieczeństwo, marketing i rozwój Twojej marki osobistej.
+        Jesteśmy agencją wspierającą kobiety w zarabianiu na OnlyFans. Oferujemy kompleksową obsługę, bezpieczeństwo, marketing i rozwój Twojej marki osobistej.
       </p>
     </div>
-    <div>
+    <div class="footer-col">
       <h3>Menu</h3>
-      <ul style="list-style: none; padding: 0;">
+      <ul>
         <li><a href="#">Strona główna</a></li>
         <li><a href="#onas">O nas</a></li>
         <li><a href="#uslugi">Usługi</a></li>
@@ -320,17 +387,18 @@ input, textarea {
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </div>
-    <div>
+    <div class="footer-col">
       <h3>Kontakt</h3>
       <p>Email: <a href="mailto:kontakt@velurea.pl">kontakt@velurea.pl</a></p>
       <p>Instagram: <a href="https://www.instagram.com/workwithvelurea" target="_blank">@workwithvelurea</a></p>
-      <p>Godziny działania: 24/7</p>
+      <p>Działamy 24/7</p>
     </div>
   </div>
   <div class="footer-bottom">
     &copy; 2025 velurea.pl | Wszelkie prawa zastrzeżone
   </div>
 </footer>
+
 
 <script>
   // Gwiazdki w tle
