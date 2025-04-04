@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VELUREA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display&display=swap" rel="stylesheet" />
   <style>
-    /* CSS */
     :root {
       --accent: #d4af37;
       --bg-color: #111;
@@ -15,21 +14,10 @@
       --light-text: #cccccc;
     }
 
-    [data-theme="light"] {
-      --bg-color: #f9f9f9;
-      --card-bg: #ffffff;
-      --text: #111111;
-      --light-text: #555555;
-    }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
@@ -42,45 +30,39 @@
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
       color: var(--accent);
-      overflow-x: hidden;
-      position: relative;
-      transition: background 0.4s, color 0.4s;
     }
 
     a {
       color: var(--accent);
       text-decoration: none;
-      transition: color 0.3s;
     }
 
     a:hover {
-      color: #fff;
+      text-decoration: underline;
     }
 
     canvas#stars {
-      display: block;
-    }
-
-    #stars {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: transparent;
     }
 
     header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #000;
+      padding: 1rem 2rem;
       position: sticky;
       top: 0;
-      z-index: 1000;
-      background-color: #000;
-      padding: 1rem;
+      z-index: 999;
     }
 
     .logo {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-family: 'Playfair Display', serif;
       color: var(--accent);
     }
@@ -88,29 +70,28 @@
     nav ul {
       display: flex;
       list-style: none;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .hero {
-      padding: 8rem 2rem;
       text-align: center;
-      background: none; /* Removed background */
+      padding-top: 10rem;
     }
 
     .hero h1 {
-      font-size: 5rem;
+      font-size: 4rem;
       animation: glow 2s ease-in-out infinite alternate;
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #d4af37; }
-      to { text-shadow: 0 0 20px #d4af37; }
     }
 
     .hero p {
@@ -129,28 +110,6 @@
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
-      transition: background 0.3s ease;
-    }
-
-    .cta-btn:hover {
-      background-color: #f5d76e;
-    }
-
-    section {
-      padding: 6rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-      animation: fadeInUp 1s ease;
-    }
-
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    h2 {
-      margin-bottom: 2rem;
-      font-size: 3rem; /* Increased font size for better visibility */
     }
 
     .grid {
@@ -166,9 +125,9 @@
       background: var(--card-bg);
       padding: 2rem;
       border-radius: 12px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
       opacity: 0;
       transform: translateY(40px);
+      transition: all 0.5s ease-out;
     }
 
     .card.animate {
@@ -176,210 +135,81 @@
       transform: translateY(0);
     }
 
-    .card:hover {
-      transform: scale(1.02);
-    }
-
     footer {
       background: #000;
       text-align: center;
       padding: 2rem;
-      font-size: 0.9rem;
-      color: #aaa;
+      color: var(--light-text);
     }
 
-    .social-links a {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: #333;
-      padding: 1rem;
-      border-radius: 5px;
-      margin-bottom: 1rem;
-      color: var(--accent);
-      font-weight: 500;
-      text-align: center;
-      transition: background 0.3s;
-    }
-
-    .social-links a:hover {
-      background: var(--accent);
-      color: #000;
-    }
-
-    .contact-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-
-    .contact-form, .contact-socials {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 5px;
-      background: #333;
-      color: #fff;
-    }
-
-    button {
-      background: var(--accent);
-      color: #000;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: #f5d76e;
-    }
-
-    @media(max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .contact-grid {
-        flex-direction: column;
-      }
-
-      h2 {
-        font-size: 2.5rem; /* Increased for better readability on small screens */
-      }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #d4af37; }
+      to { text-shadow: 0 0 20px #d4af37; }
     }
   </style>
 </head>
 <body>
-  <div id="preloader">
-    <img src="https://i.imgur.com/QhNYT6x.png" alt="VELUREA logo">
-  </div>
-
   <canvas id="stars"></canvas>
 
-  <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  <header>
+    <div class="logo">VELUREA</div>
+    <nav>
+      <ul>
+        <li><a href="#onas">O Nas</a></li>
+        <li><a href="#uslugi">Usługi</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <div id="main-content">
-    <header>
-      <div class="logo">VELUREA</div>
-      <nav>
-        <ul>
-          <li><a href="#onas">O Nas</a></li>
-          <li><a href="#uslugi">Usługi</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-      </nav>
-    </header>
+  <section class="hero">
+    <h1>VELUREA</h1>
+    <p>Twój zespół do sukcesu na OnlyFans</p>
+    <a href="#uslugi" class="cta-btn">Zacznij z nami</a>
+  </section>
 
-    <section class="hero">
-      <h1>VELUREA</h1>
-      <p>Twój zespół do sukcesu na OnlyFans</p>
-      <a href="#uslugi" class="cta-btn">Zacznij z nami</a>
-    </section>
+  <section id="onas">
+    <h2>O Nas</h2>
+    <div class="grid grid-2">
+      <div class="card"><h3>Kim jesteśmy?</h3><p>Agencja wspierająca kobiety w zarabianiu na OnlyFans, od A do Z.</p></div>
+      <div class="card"><h3>Nasze podejście</h3><p>"Your body, our business" – Ty tworzysz treści, my robimy resztę.</p></div>
+      <div class="card"><h3>Bezpieczeństwo</h3><p>Twoja anonimowość i prywatność są naszym priorytetem.</p></div>
+      <div class="card"><h3>Pełna obsługa</h3><p>Zarządzanie, content, kampanie – kompleksowo.</p></div>
+    </div>
+  </section>
 
-    <section id="onas">
-      <h2>O Nas</h2>
-      <div class="grid grid-2">
-        <div class="card"><h3>Kim jesteśmy?</h3><p>Agencja wspierająca kobiety w zarabianiu na OnlyFans, od A do Z.</p></div>
-        <div class="card"><h3>Nasze podejście</h3><p>"Your body, our business" – Ty tworzysz treści, my robimy resztę.</p></div>
-        <div class="card"><h3>Bezpieczeństwo</h3><p>Twoja anonimowość i prywatność są naszym priorytetem.</p></div>
-        <div class="card"><h3>Pełna obsługa</h3><p>Zarządzanie, content, kampanie – kompleksowo.</p></div>
-      </div>
-    </section>
+  <section id="uslugi">
+    <h2>Nasze Usługi</h2>
+    <div class="grid grid-2">
+      <div class="card"><h3>Zarządzanie kontem</h3><p>24/7 support, wiadomości, PPV, tipy.</p></div>
+      <div class="card"><h3>Produkcja treści</h3><p>Stylizacje, zdjęcia, wideo, retusz.</p></div>
+      <div class="card"><h3>Marketing</h3><p>Promocja na IG, TikTok, Twitter.</p></div>
+      <div class="card"><h3>Reklamy</h3><p>Targetowane kampanie reklamowe.</p></div>
+      <div class="card"><h3>Analiza</h3><p>Statystyki, raporty i optymalizacja konta.</p></div>
+      <div class="card"><h3>Kalendarz publikacji</h3><p>Planowanie i organizacja postów.</p></div>
+    </div>
+  </section>
 
-    <section id="uslugi">
-      <h2>Nasze Usługi</h2>
-      <div class="grid grid-2">
-        <div class="card"><h3>Zarządzanie kontem</h3><p>24/7 support, wiadomości, PPV, tipy.</p></div>
-        <div class="card"><h3>Produkcja treści</h3><p>Stylizacje, zdjęcia, wideo, retusz.</p></div>
-        <div class="card"><h3>Marketing</h3><p>Promocja na IG, TikTok, Twitter.</p></div>
-        <div class="card"><h3>Reklamy</h3><p>Targetowane kampanie reklamowe.</p></div>
-        <div class="card"><h3>Analiza</h3><p>Statystyki, raporty i optymalizacja konta.</p></div>
-        <div class="card"><h3>Kalendarz publikacji</h3><p>Planowanie i organizacja postów.</p></div>
-      </div>
-    </section>
+  <section id="faq">
+    <h2>Najczęściej Zadawane Pytania</h2>
+    <div class="card"><strong>Jak dołączyć?</strong><p>Wypełnij formularz lub napisz do nas na Instagramie.</p></div>
+    <div class="card"><strong>Czy muszę mieć konto?</strong><p>Nie – pomożemy Ci od zera wystartować.</p></div>
+    <div class="card"><strong>Ile to kosztuje?</strong><p>Pakiety są indywidualnie dopasowane do Ciebie.</p></div>
+    <div class="card"><strong>Czy mam wpływ na profil?</strong><p>Oczywiście – to Twoje konto, my tylko pomagamy.</p></div>
+    <div class="card"><strong>Czy to dyskretne?</strong><p>Tak – działamy z pełną prywatnością.</p></div>
+  </section>
 
-    <section id="faq">
-      <h2>Najczęściej Zadawane Pytania</h2>
-      <div class="faq-item"><div class="question">Jak dołączyć?</div><div class="answer">Wypełnij formularz lub napisz do nas na Instagramie.</div></div>
-      <div class="faq-item"><div class="question">Czy muszę mieć konto?</div><div class="answer">Nie – pomożemy Ci od zera wystartować.</div></div>
-      <div class="faq-item"><div class="question">Ile to kosztuje?</div><div class="answer">Mamy pakiety dopasowane do Ciebie – ustalane indywidualnie.</div></div>
-      <div class="faq-item"><div class="question">Mam wpływ na swój profil?</div><div class="answer">Oczywiście – to Twoje konto, a my tylko pomagamy.</div></div>
-      <div class="faq-item"><div class="question">Czy współpracujecie dyskretnie?</div><div class="answer">Tak, działamy z pełnym zachowaniem prywatności.</div></div>
-      <div class="faq-item"><div class="question">Jak szybko zobaczę efekty?</div><div class="answer">Zazwyczaj w ciągu kilku tygodni od startu!</div></div>
-    </section>
-
-    <section id="kontakt">
-      <h2>Kontakt</h2>
-      <div class="contact-grid">
-        <div class="contact-form">
-          <form action="mailto:kontakt@velurea.pl" method="POST" enctype="text/plain">
-            <input type="text" name="name" placeholder="Imię" required />
-            <input type="email" name="email" placeholder="Email" required />
-            <input type="text" name="instagram" placeholder="Instagram" />
-            <textarea name="message" placeholder="Wiadomość" required></textarea>
-            <button type="submit">Wyślij</button>
-          </form>
-        </div>
-        <div class="contact-socials">
-          <h3>Social Media</h3>
-          <div class="social-links">
-            <a href="https://www.instagram.com/workwithvelurea/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="https://www.tiktok.com/@workwithvelurea" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-            <a href="https://x.com/WorkWithVelurea" target="_blank"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <p style="color: var(--light-text); text-align: center;">kontakt@velurea.pl • Działamy 24/7</p>
+  </section>
 
   <footer>
-    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: flex-start; padding: 2rem; max-width: 1200px; margin: auto;">
-      <div style="flex: 1; min-width: 250px;">
-        <h3 style="color: var(--accent); font-family: 'Playfair Display', serif;">VELUREA</h3>
-        <p style="margin-top: 1rem; color: var(--light-text);">Jesteśmy agencją wspierającą kobiety w zarabianiu na OnlyFans. Pomagamy w maksymalizacji Twoich zysków przy minimalnym zaangażowaniu czasowym z Twojej strony.</p>
-        <a href="#kontakt" class="cta-btn" style="margin-top: 1.5rem; display: inline-block;">Dołącz do nas!</a>
-      </div>
-      <div style="flex: 1; min-width: 200px; padding: 1rem 2rem;">
-        <h4 style="margin-bottom: 1rem; color: var(--accent);">Menu</h4>
-        <ul style="list-style: none; padding: 0; color: var(--light-text);">
-          <li><a href="#" style="color: var(--light-text);">Strona główna</a></li>
-          <li><a href="#onas" style="color: var(--light-text);">O nas</a></li>
-          <li><a href="#uslugi" style="color: var(--light-text);">Usługi</a></li>
-          <li><a href="#faq" style="color: var(--light-text);">FAQ</a></li>
-          <li><a href="#kontakt" style="color: var(--light-text);">Kontakt</a></li>
-        </ul>
-      </div>
-      <div style="flex: 1; min-width: 200px;">
-        <h4 style="margin-bottom: 1rem; color: var(--accent);">Kontakt</h4>
-        <p style="color: var(--light-text);">kontakt@velurea.pl</p>
-        <p style="margin-top: 0.5rem; color: var(--light-text);">Działamy 24/7</p>
-        <div style="margin-top: 1rem; display: flex; gap: 1rem;">
-          <a href="https://facebook.com" target="_blank" style="color: var(--accent);"><i class="fab fa-facebook fa-lg"></i></a>
-          <a href="https://instagram.com/workwithvelurea" target="_blank" style="color: var(--accent);"><i class="fab fa-instagram fa-lg"></i></a>
-          <a href="https://x.com/WorkWithVelurea" target="_blank" style="color: var(--accent);"><i class="fab fa-x-twitter fa-lg"></i></a>
-        </div>
-      </div>
-    </div>
-    <div style="text-align: center; padding: 1rem; background: #0a0a0a; color: #777; font-size: 0.85rem;">
-      &copy; 2025 velurea.pl | Polityka prywatności
-    </div>
+    &copy; 2025 velurea.pl • Wszelkie prawa zastrzeżone
   </footer>
 
   <script>
-    window.addEventListener('load', () => {
-      document.getElementById('preloader').style.display = 'none';
-    });
-
     const canvas = document.getElementById('stars');
     const ctx = canvas.getContext('2d');
     let stars = [];
@@ -388,8 +218,6 @@
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
 
     function createStars(count) {
       stars = [];
@@ -421,12 +249,31 @@
       });
     }
 
-    createStars(150);
-    function animate() {
+    function animateStars() {
       drawStars();
-      requestAnimationFrame(animate);
+      requestAnimationFrame(animateStars);
     }
-    animate();
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      createStars(150);
+    });
+
+    resizeCanvas();
+    createStars(150);
+    animateStars();
+
+    // Card animation on scroll
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => observer.observe(card));
   </script>
 </body>
 </html>
