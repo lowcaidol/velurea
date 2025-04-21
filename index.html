@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VELUREA</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display&display=swap" rel="stylesheet" />
- <title>VELUREA – Agencja Kreatywna | Zarządzanie Onlyfansem</title>
-<meta name="description" content="Tworzymy Modelki, które tworzą duże pieniądze. VELUREA – agencja kreatywna zarządzająca kontami Onlyfans.">
+  <meta name="description" content="Tworzymy Modelki, które tworzą duże pieniądze. VELUREA – agencja kreatywna zarządzająca kontami Onlyfans.">
 
   <style>
     :root {
       --accent: #d4af37;
-      --bg-color: #111;
-      --card-bg: #1c1c2e;
-      --text: #f9f9f9;
-      --light-text: #cccccc;
+      --bg-color: #f5c9e2;
+      --card-bg: #f1a1c4;
+      --text: #fff;
+      --light-text: #d3c1c1;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -25,16 +24,12 @@
     }
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
+      font-weight: 700;
       color: var(--accent);
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    canvas#stars {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      z-index: -1;
-      pointer-events: none;
-    }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -45,24 +40,32 @@
       top: 0;
       z-index: 999;
     }
+
     nav ul {
       display: flex;
       list-style: none;
       gap: 1.5rem;
     }
+
     section {
       padding: 6rem 2rem;
       max-width: 1200px;
       margin: auto;
     }
+
     .hero {
       text-align: center;
       padding-top: 10rem;
+      background: linear-gradient(135deg, rgba(255, 191, 191, 0.8), rgba(255, 170, 170, 0.6));
+      padding: 8rem 2rem;
     }
+
     .hero h1 {
       font-size: 4rem;
+      color: var(--accent);
       animation: glow 2s ease-in-out infinite alternate;
     }
+
     .cta-btn {
       margin-top: 2rem;
       background-color: var(--accent);
@@ -72,207 +75,90 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
     }
+
     .grid {
       display: grid;
       gap: 2rem;
     }
+
     .grid-2 {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
+
     .card {
       background: var(--card-bg);
       padding: 2rem;
       border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       opacity: 0;
       transform: translateY(40px);
       transition: all 0.5s ease-out;
     }
+
     .card.animate {
       opacity: 1;
       transform: translateY(0);
     }
+
     @keyframes glow {
       from { text-shadow: 0 0 10px #d4af37; }
       to { text-shadow: 0 0 20px #d4af37; }
     }
-    .contact-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2rem;
-}
 
-.contact-form, .contact-socials {
-  flex: 1;
-  min-width: 300px;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border: none;
-  border-radius: 8px;
-  background: #222;
-  color: #fff;
-}
-
-.social-links a {
-  display: block;
-  background: #222;
-  padding: 0.75rem 1rem;
-  margin-bottom: 0.5rem;
-  border-radius: 8px;
-  color: var(--accent);
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.social-links a:hover {
-  background: var(--accent);
-  color: #000;
-}
-    .faq-item {
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #333;
-  padding-bottom: 1rem;
-}
-
-.faq-question {
-  background: none;
-  border: none;
-  color: var(--accent);
-  font-weight: bold;
-  font-size: 1.1rem;
-  cursor: pointer;
-  text-align: left;
-  width: 100%;
-  padding: 0.5rem 0;
-}
-
-.faq-answer {
-  display: none;
-  color: var(--light-text);
-  margin-top: 0.5rem;
-  line-height: 1.6;
-}
-
-.faq-item.active .faq-answer {
-  display: block;
-}
-
-button {
-  background: var(--accent);
-  color: #000;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-}
-
-button:hover {
-  background: #f5d76e;
-  transform: scale(1.03);
-}
     footer {
-  background: #000;
-  color: var(--light-text);
-  padding: 4rem 2rem;
-}
+      background: #000;
+      color: var(--light-text);
+      padding: 4rem 2rem;
+    }
 
-.footer-columns {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-.footer-col {
-  flex: 1;
-  min-width: 250px;
-}
+    .footer-col {
+      flex: 1;
+      min-width: 250px;
+    }
 
-.footer-col h3 {
-  color: var(--accent);
-  margin-bottom: 1rem;
-  font-family: 'Playfair Display', serif;
-}
+    .footer-col h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
 
-.footer-col ul {
-  list-style: none;
-  padding: 0;
-}
+    .footer-col a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
-.footer-col ul li {
-  margin-bottom: 0.5rem;
-}
-
-.footer-col a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.footer-col a:hover {
-  text-decoration: underline;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 3rem;
-  font-size: 0.85rem;
-  color: #777;
-}
-#onas p {
-  font-size: 1.05rem;
-  color: var(--light-text);
-}
-
-#onas h2 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-}
-
-#onas h3 {
-  font-size: 1.3rem;
-}
-    nav a.active {
-  color: #fff !important;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 0.25rem;
-}
-
-
-
+    .footer-col a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
+
 <canvas id="stars"></canvas>
 
 <header>
   <div class="logo">
-    <a href="#" style="color: var(--accent); text-decoration: none;">VELUREA</a>
+    <a href="#">VELUREA</a>
   </div>
   <nav>
     <ul>
-      <li><a href="#" data-target="onas">O Nas</a></li>
-      <li><a href="#" data-target="uslugi">Usługi</a></li>
-      <li><a href="#" data-target="faq">FAQ</a></li>
-      <li><a href="#" data-target="kontakt">Kontakt</a></li>
+      <li><a href="#onas">O Nas</a></li>
+      <li><a href="#uslugi">Usługi</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
     </ul>
   </nav>
 </header>
-
-
 
 <section class="hero">
   <h1>VELUREA</h1>
@@ -282,24 +168,19 @@ button:hover {
 
 <section id="onas">
   <h2>O Nas</h2>
-
-  <div style="margin-top: 2rem; line-height: 1.7;">
-    <p><strong>Kim jesteśmy?</strong><br />
-    Jesteśmy profesjonalną agencją wspierającą kobiety w budowaniu marki na OnlyFans. 
-    Zapewniamy kompleksowe wsparcie – od strategii, przez content, po analitykę.</p>
-
-    <p style="margin-top: 1.5rem;"><strong>Nasze podejście:</strong><br />
-    Stawiamy na partnerską współpracę, poufność i maksymalizację zysków bez utraty kontroli nad własnym wizerunkiem.</p>
-  </div>
-
+  <p><strong>Kim jesteśmy?</strong><br />
+    Jesteśmy profesjonalną agencją wspierającą kobiety w budowaniu marki na OnlyFans. Zapewniamy pełne wsparcie – od strategii po content i analitykę.</p>
+  <p><strong>Nasze podejście:</strong><br />
+    Zależy nam na poufności, partnerskiej współpracy i maksymalizacji zysków bez utraty kontroli nad wizerunkiem.</p>
+  
   <div class="grid grid-2" style="margin-top: 3rem;">
-    <div class="card" style="background-color: #1a1a2f;">
-      <h3 style="color: var(--accent); margin-bottom: 0.5rem;">🔒 Bezpieczeństwo</h3>
-      <p>Zadbamy o Twoją prywatność i pełną anonimowość, jeśli tego chcesz. Wszystko zgodnie z Twoimi granicami i komfortem.</p>
+    <div class="card">
+      <h3>🔒 Bezpieczeństwo</h3>
+      <p>Dbamy o Twoją prywatność, zapewniając pełną anonimowość, jeśli tego chcesz.</p>
     </div>
-    <div class="card" style="background-color: #1a1a2f;">
-      <h3 style="color: var(--accent); margin-bottom: 0.5rem;">📦 Pełna obsługa</h3>
-      <p>Zarządzanie treściami, komunikacja z fanami, rozwój profilu – wszystko w jednym miejscu, bez potrzeby Twojego zaangażowania w technikalia.</p>
+    <div class="card">
+      <h3>📦 Pełna obsługa</h3>
+      <p>Zarządzamy treściami, komunikacją i rozwojem profilu, bez Twojego zaangażowania w szczegóły.</p>
     </div>
   </div>
 </section>
@@ -310,7 +191,7 @@ button:hover {
     <div class="card"><h3>Zarządzanie kontem</h3><p>Obsługa wiadomości, tipów, PPV i pełne zarządzanie profilem 24/7.</p></div>
     <div class="card"><h3>Produkcja treści</h3><p>Stylizacje, sesje zdjęciowe, wideo, retusz i planowanie contentu.</p></div>
     <div class="card"><h3>Marketing</h3><p>Strategie promocji na IG, TikToku i innych platformach.</p></div>
-    <div class="card"><h3>Reklamy</h3><p>Targetowane kampanie reklamowe zwiększające widoczność i zasięgi.</p></div>
+    <div class="card"><h3>Reklamy</h3><p>Targetowane kampanie reklamowe zwiększające zasięgi i widoczność.</p></div>
     <div class="card"><h3>Analiza</h3><p>Raporty, statystyki i optymalizacja działań pod wyniki.</p></div>
     <div class="card"><h3>Kalendarz publikacji</h3><p>Planowanie i harmonogram publikacji treści w długim horyzoncie.</p></div>
   </div>
@@ -318,104 +199,32 @@ button:hover {
 
 <section id="faq">
   <h2>Najczęściej zadawane pytania</h2>
-
   <div class="faq-item">
     <button class="faq-question">Jak dołączyć?</button>
-    <div class="faq-answer">
-      Skontaktuj się z nami przez formularz na stronie lub napisz do nas na Instagramie. Po krótkiej konsultacji i poznaniu Twoich oczekiwań, przedstawimy Ci indywidualną propozycję współpracy. Nie musisz mieć doświadczenia – wszystkim się zajmiemy.
-    </div>
+    <div class="faq-answer">Skontaktuj się z nami przez formularz na stronie lub napisz na Instagramie. Po konsultacji przedstawimy propozycję współpracy.</div>
   </div>
-
   <div class="faq-item">
     <button class="faq-question">Czy muszę mieć konto na OnlyFans?</button>
-    <div class="faq-answer">
-      Nie. Możemy założyć konto za Ciebie i zadbać o jego konfigurację od zera – od nazwy profilu, przez zdjęcia, po strategię publikacji treści. Jeśli masz już konto, pomożemy Ci je zoptymalizować i wynieść na wyższy poziom.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">Ile kosztuje współpraca?</button>
-    <div class="faq-answer">
-      Nie mamy sztywnych cenników – każda współpraca jest dostosowywana indywidualnie. Wynagrodzenie ustalamy wspólnie w zależności od poziomu zaangażowania i zakresu usług. Pierwsza konsultacja jest bezpłatna i niezobowiązująca.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">Jak wygląda proces współpracy?</button>
-    <div class="faq-answer">
-      Po zaakceptowaniu współpracy, tworzymy plan działania: ustalamy cele, harmonogramy, sposoby komunikacji i strategię rozwoju. Pracujemy w 100% zdalnie, zapewniając Ci prywatność, wsparcie techniczne i pełną kontrolę nad wizerunkiem.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">Czy mogę zachować anonimowość?</button>
-    <div class="faq-answer">
-      Tak, to absolutnie możliwe. Posiadamy doświadczenie w prowadzeniu kont anonimowych, bez pokazywania twarzy. Dobieramy odpowiednie strategie promocji, abyś mogła zarabiać bez konieczności ujawniania swojej tożsamości.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">Jak szybko zobaczę efekty?</button>
-    <div class="faq-answer">
-      To zależy od zaangażowania oraz wybranego modelu działania, ale większość naszych partnerek widzi pierwsze realne efekty (wzrost fanów, tipy, wiadomości) już po 2–3 tygodniach. Im większe zaangażowanie i współpraca – tym szybsze rezultaty.
-    </div>
+    <div class="faq-answer">Nie. Możemy założyć konto za Ciebie i zadbać o jego konfigurację od podstaw.</div>
   </div>
 </section>
-
 
 <section id="kontakt">
   <h2>Kontakt</h2>
-  <div class="contact-grid">
-    <!-- Formularz -->
-    <div class="contact-form">
-      <form action="mailto:kontakt@velurea.pl" method="POST" enctype="text/plain">
-        <input type="text" name="name" placeholder="Imię" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <input type="text" name="instagram" placeholder="Instagram (opcjonalnie)" />
-        <textarea name="message" placeholder="Wiadomość" required></textarea>
-        <button type="submit">Wyślij wiadomość</button>
-      </form>
-    </div>
-
-    <!-- Social Media -->
-    <div class="contact-socials">
-      <h3>Znajdziesz nas tutaj:</h3>
-      <div class="social-links">
-        <a href="https://www.instagram.com/workwithvelurea" target="_blank">📸 Instagram</a>
-        <a href="https://www.tiktok.com/@workwithvelurea" target="_blank">🎵 TikTok</a>
-        <a href="https://x.com/WorkWithVelurea" target="_blank">🐦 Twitter (X)</a>
-      </div>
-      <p style="margin-top: 2rem; color: var(--light-text);">kontakt@velurea.pl<br />Działamy 24/7</p>
-    </div>
-  </div>
+  <p>Skontaktuj się z nami poprzez formularz lub media społecznościowe:</p>
+  <form action="mailto:kontakt@velurea.pl" method="POST" enctype="text/plain">
+    <input type="text" name="name" placeholder="Imię" required />
+    <input type="email" name="email" placeholder="Email" required />
+    <textarea name="message" placeholder="Wiadomość" required></textarea>
+    <button type="submit">Wyślij wiadomość</button>
+  </form>
 </section>
 
-<style>
-  .faq-item {
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid #333;
-    padding-bottom: 1rem;
-  }
-  .faq-question {
-    font-weight: bold;
-    cursor: pointer;
-  }
-  .faq-answer {
-    display: none;
-    color: var(--light-text);
-    margin-top: 0.5rem;
-  }
-  .faq-item.active .faq-answer {
-    display: block;
-  }
-</style>
-  <footer>
+<footer>
   <div class="footer-columns">
     <div class="footer-col">
       <h3>VELUREA</h3>
-      <p>
-        Jesteśmy agencją wspierającą kobiety w zarabianiu na OnlyFans. Oferujemy kompleksową obsługę, bezpieczeństwo, marketing i rozwój Twojej marki osobistej.
-      </p>
+      <p>Agencja wspierająca kobiety w zarabianiu na OnlyFans. Oferujemy kompleksową obsługę i marketing.</p>
     </div>
     <div class="footer-col">
       <h3>Menu</h3>
@@ -431,17 +240,11 @@ button:hover {
       <h3>Kontakt</h3>
       <p>Email: <a href="mailto:kontakt@velurea.pl">kontakt@velurea.pl</a></p>
       <p>Instagram: <a href="https://www.instagram.com/workwithvelurea" target="_blank">@workwithvelurea</a></p>
-      <p>Działamy 24/7</p>
     </div>
-  </div>
-  <div class="footer-bottom">
-    &copy; 2025 velurea.pl | Wszelkie prawa zastrzeżone
   </div>
 </footer>
 
-
 <script>
-  // Gwiazdki w tle
   const canvas = document.getElementById('stars');
   const ctx = canvas.getContext('2d');
   let stars = [];
@@ -493,75 +296,7 @@ button:hover {
   resizeCanvas();
   createStars(150);
   animateStars();
-
-  // Animacja kart przy scrollowaniu
-  const cards = document.querySelectorAll('.card');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-      }
-    });
-  }, { threshold: 0.1 });
-  cards.forEach(card => observer.observe(card));
-
-  // Rozwijanie FAQ
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => {
-      item.classList.toggle('active');
-    });
-  });
-
-  document.querySelectorAll('a[data-target]').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const id = this.getAttribute('data-target');
-      const target = document.getElementById(id);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-
-        // Usunięcie hasha z adresu po kliknięciu
-        history.replaceState(null, null, ' ');
-      }
-    });
-  });
-  
-  // Scroll do sekcji + usuwanie # z URL
-  document.querySelectorAll('a[data-target]').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const id = this.getAttribute('data-target');
-      const target = document.getElementById(id);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-        history.replaceState(null, null, ' ');
-      }
-    });
-  });
-
-  // ScrollSpy – aktywna sekcja w menu
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('nav a[data-target]');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150;
-      if (window.scrollY >= sectionTop) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('data-target') === current) {
-        link.classList.add('active');
-      }
-    });
-  });
 </script>
-
-
 
 </body>
 </html>
