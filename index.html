@@ -14,19 +14,24 @@
       --card-bg: #f1a1c4;
       --text: #fff;
       --light-text: #d3c1c1;
+      --product-bg: #ffb7b7; /* Tło dla produktów */
     }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Poppins', sans-serif;
       background-color: var(--bg-color);
       color: var(--text);
       scroll-behavior: smooth;
     }
+
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
       color: var(--accent);
     }
+
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
@@ -101,6 +106,50 @@
       transform: translateY(0);
     }
 
+    .product-card {
+      background: var(--product-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin: 0 auto;
+      max-width: 300px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-card h3 {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .product-card .price {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .product-card .add-to-cart {
+      background-color: var(--accent);
+      color: #000;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .product-card .add-to-cart:hover {
+      background-color: #f5d76e;
+    }
+
     @keyframes glow {
       from { text-shadow: 0 0 10px #d4af37; }
       to { text-shadow: 0 0 20px #d4af37; }
@@ -142,6 +191,7 @@
     }
   </style>
 </head>
+
 <body>
 
 <canvas id="stars"></canvas>
@@ -169,18 +219,16 @@
 <section id="onas">
   <h2>O Nas</h2>
   <p><strong>Kim jesteśmy?</strong><br />
-    Jesteśmy profesjonalną agencją wspierającą kobiety w budowaniu marki na OnlyFans. Zapewniamy pełne wsparcie – od strategii po content i analitykę.</p>
-  <p><strong>Nasze podejście:</strong><br />
-    Zależy nam na poufności, partnerskiej współpracy i maksymalizacji zysków bez utraty kontroli nad wizerunkiem.</p>
-  
+    Jesteśmy agencją wspierającą kobiety w budowaniu marki na OnlyFans. Oferujemy pełne wsparcie w zakresie strategii, tworzenia treści i analityki.</p>
+
   <div class="grid grid-2" style="margin-top: 3rem;">
     <div class="card">
       <h3>🔒 Bezpieczeństwo</h3>
-      <p>Dbamy o Twoją prywatność, zapewniając pełną anonimowość, jeśli tego chcesz.</p>
+      <p>Zadbamy o Twoją prywatność i anonimowość, jeśli tego chcesz. Wszystko zgodnie z Twoimi granicami.</p>
     </div>
     <div class="card">
       <h3>📦 Pełna obsługa</h3>
-      <p>Zarządzamy treściami, komunikacją i rozwojem profilu, bez Twojego zaangażowania w szczegóły.</p>
+      <p>Od zarządzania treściami po komunikację z fanami, zapewniamy pełną obsługę Twojego konta.</p>
     </div>
   </div>
 </section>
@@ -201,7 +249,7 @@
   <h2>Najczęściej zadawane pytania</h2>
   <div class="faq-item">
     <button class="faq-question">Jak dołączyć?</button>
-    <div class="faq-answer">Skontaktuj się z nami przez formularz na stronie lub napisz na Instagramie. Po konsultacji przedstawimy propozycję współpracy.</div>
+    <div class="faq-answer">Skontaktuj się z nami przez formularz na stronie lub napisz do nas na Instagramie. Po krótkiej konsultacji przedstawimy Ci propozycję współpracy.</div>
   </div>
   <div class="faq-item">
     <button class="faq-question">Czy muszę mieć konto na OnlyFans?</button>
@@ -211,7 +259,7 @@
 
 <section id="kontakt">
   <h2>Kontakt</h2>
-  <p>Skontaktuj się z nami poprzez formularz lub media społecznościowe:</p>
+  <p>Skontaktuj się z nami przez formularz lub media społecznościowe:</p>
   <form action="mailto:kontakt@velurea.pl" method="POST" enctype="text/plain">
     <input type="text" name="name" placeholder="Imię" required />
     <input type="email" name="email" placeholder="Email" required />
